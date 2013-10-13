@@ -1,0 +1,6 @@
+## Interface: 50400
+## Title: VendorTrash
+## Notes: Sell your trash loots with one click
+## Author: Clefairy
+VendorTrash.lua
+VendorTrash.xml
