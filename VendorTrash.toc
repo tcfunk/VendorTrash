@@ -1,6 +1,7 @@
-## Interface: 50400
+## Interface: 11302
 ## Title: VendorTrash
-## Notes: Sell your trash loots with one click
-## Author: Clefairy
+## Version: 0.10
+## Notes: Sell your trash loot with one click.
+## Author: Tyfoo (Whitemane)
 VendorTrash.lua
 VendorTrash.xml
