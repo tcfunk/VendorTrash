@@ -6,7 +6,7 @@
   <Frame name="VendorTrash" parent="UIParent">
   	<Scripts>
   		<OnLoad>
-  			HelloWorld();
+  			init();
   		</OnLoad>
   	</Scripts>
   </Frame>
