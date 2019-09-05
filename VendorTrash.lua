@@ -7,7 +7,7 @@ end
 
 -- Initialize the addon
 function VendorTrash:Initialize()
-  local f = CreateFrame("FRAME", nil, UIParent)
+  local f = CreateFrame("FRAME", nil, MerchantFrame)
   f:SetWidth(110)
   f:SetHeight(30)
   f:SetBackdrop({
@@ -16,10 +16,8 @@ function VendorTrash:Initialize()
         tile = true, tileSize = 32, edgeSize = 32,
         insets = {left = 11, right = 12, top = 12, bottom = 11}
   })
-  f:RegisterEvent("MERCHANT_SHOW")
-  f:RegisterEvent("MERCHANT_CLOSED")
   f:SetBackdropColor(0,0,0,1)
-  f:Show()
+  f:SetPoint("TOPRIGHT", MerchantFrame, "TOPRIGHT", 0, -20)
 
   f.btn = CreateFrame("BUTTON", nil, f, "UIPanelButtonTemplate")
   f.btn:SetWidth(100)
@@ -29,15 +27,6 @@ function VendorTrash:Initialize()
   f.btn:SetAlpha(1)
 
   f.btn:SetScript("OnClick", sell_greys)
-
-  f:SetScript("OnEvent", function(self, event, ...)
-    if event == "MERCHANT_SHOW" then
-      -- maybe we can base these on MerchantFrame instead?
-      f:SetPoint("LEFT", UIParent, "CENTER",-50,0)
-    elseif event == "MERCHANT_CLOSED" then
-      f:SetPoint("LEFT", UIParent, "RIGHT",1,0)
-    end
-  end)
 end
 
 function convert_currency(amount)
@@ -74,11 +63,15 @@ function sell_greys()
         local _,_,_,_,_,_,_,_,_,_,sell_price = GetItemInfo(link)
         UseContainerItem(bag,slot)
         vtprint("Sold " .. link .. "x" .. quantity .. " at " .. convert_currency(sell_price) .. " each")
-        total_earned = total_earned + sell_price
+        total_earned = total_earned + (quantity*sell_price)
       end
     end -- end slots
   end
-  vtprint("Sold " .. convert_currency(total_earned) .. " worth of junk!")
+  if total_earned > 0 then
+    vtprint("Sold " .. convert_currency(total_earned) .. " worth of junk!")
+  else
+    vtprint("Nothing to sell.")
+  end
 end
 
 VendorTrash.frame = frame
