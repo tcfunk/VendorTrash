@@ -1,4 +1,4 @@
-## Interface: 11302
+## Interface: 90001
 ## Title: VendorTrash
 ## Version: 0.10
 ## Notes: Sell your trash loot with one click.

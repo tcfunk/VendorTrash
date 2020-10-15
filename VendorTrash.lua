@@ -7,7 +7,7 @@ end
 
 -- Initialize the addon
 function VendorTrash:Initialize()
-  local f = CreateFrame("FRAME", nil, MerchantFrame)
+  local f = CreateFrame("FRAME", nil, MerchantFrame, "BackdropTemplate")
   f:SetWidth(110)
   f:SetHeight(30)
   f:SetBackdrop({
@@ -17,7 +17,7 @@ function VendorTrash:Initialize()
         insets = {left = 11, right = 12, top = 12, bottom = 11}
   })
   f:SetBackdropColor(0,0,0,1)
-  f:SetPoint("TOPRIGHT", MerchantFrame, "TOPRIGHT", 0, -20)
+  f:SetPoint("TOPLEFT", MerchantFrame, "TOPLEFT", 60, -25)
 
   f.btn = CreateFrame("BUTTON", nil, f, "UIPanelButtonTemplate")
   f.btn:SetWidth(100)
