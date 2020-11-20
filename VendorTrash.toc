@@ -1,7 +1,7 @@
-## Interface: 90001
+## Interface: 90002
 ## Title: VendorTrash
-## Version: 0.10
+## Version: 1.0.0
 ## Notes: Sell your trash loot with one click.
-## Author: Tyfoo (Whitemane)
+## Author: Tyfoo (Proudmoore)
 VendorTrash.lua
 VendorTrash.xml

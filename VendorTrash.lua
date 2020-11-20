@@ -2,7 +2,7 @@ local VendorTrash = {}
 
 function init()
   VendorTrash:Initialize()
-  vtprint("VendorTrash v0.10 initialized")
+  vtprint("VendorTrash v1.0.0 initialized")
 end
 
 -- Initialize the addon
