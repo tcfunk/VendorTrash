@@ -1,6 +1,10 @@
 ## Interface: 11509
 ## Title: VendorTrash
-## Version: 0.10
+## Version: 0.11
 ## Notes: Sell your trash loot with one click.
+## SavedVariables: VendorTrashDB
 ## Author: Tyfoo (Whitemane)
+
+Data.lua
 VendorTrash.lua
+Config.lua
